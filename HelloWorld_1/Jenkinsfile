@@ -11,7 +11,7 @@ pipeline {
         stage('Test HelloWorld1') {
             agent any
             steps {
-                echo 'Testing HelloWorld1 ...'
+                echo 'Testing HelloWorld1 '
             }
         }
     }
