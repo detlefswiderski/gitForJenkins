@@ -2,16 +2,19 @@ pipeline {
     agent any 
 
     stages {
-        stage('Build HelloWorld 1') {
+        stage('Echo HelloWorld 1') {
             agent any 
             steps {
-                echo 'Building HelloWorld1'
+                echo 'Echo HelloWorld1'
             }
         }
         stage('Test HelloWorld1') {
             agent any
             steps {
-                echo 'Testing HelloWorld1 '
+                powershell '''
+                'javac HelloWorld.java '
+                'java HelloWorld'
+                '''
             }
         }
     }
